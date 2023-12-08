@@ -1,5 +1,5 @@
 const express = require('express');
-
+const path = require('path')
 const PORT = 3001;
 const app = express()
 
@@ -12,19 +12,8 @@ const apiRouter = require('./routes/apiRoutes')
 const htmlRouter = require('./routes/htmlRoutes')
 
 app.use('/api', apiRouter)
-app.use('/html', htmlRouter)
+app.use('/', htmlRouter)
 
-app.get('/api/notes', (req,res) => {
-
-})
-
-app.post('/api/notes', (req,res) => {
-
-})
-
-app.delete('/api/notes/:note_id', (req,res) => {
-
-})
 
 app.listen(PORT, () =>
     console.log(`App listening at http://localhost:${PORT}`)

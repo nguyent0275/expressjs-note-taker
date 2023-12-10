@@ -15,12 +15,13 @@
 
 A note taking application that can be used to write and save notes. The application uses Express.js as a back end and will save and retrieve note data from a JSON file. 
 
-## Installation
+## Links
 
+Deployed App Page: https://tn-express-note-taker-07ec5b6a93ad.herokuapp.com/
 
 ## Usage
 
-My project is anyone looking for a way manage incoming information from their everyday life. 
+My project is anyone looking for a way to manage incoming information from their everyday life. 
 
 ## Contributing
 

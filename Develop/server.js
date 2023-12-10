@@ -1,20 +1,22 @@
-const express = require('express');
-const path = require('path')
+const express = require("express");
 const PORT = 3001;
-const app = express()
+const app = express();
 
-app.use(express.json())
+// middleware for json data
+app.use(express.json());
+// middleware for url encoded data utf-8
 app.use(express.urlencoded({ extended: true }));
+// middleware for serving static files from the public folder
+app.use(express.static("public"));
 
-app.use(express.static('public'))
+const apiRouter = require("./routes/apiRoutes");
+const htmlRouter = require("./routes/htmlRoutes");
 
-const apiRouter = require('./routes/apiRoutes')
-const htmlRouter = require('./routes/htmlRoutes')
-
-app.use('/api', apiRouter)
-app.use('/', htmlRouter)
-
+// apiRouter paths will always start with '/api'
+app.use("/api", apiRouter);
+// hmltRouter routes will start with '/'
+app.use("/", htmlRouter);
 
 app.listen(PORT, () =>
-    console.log(`App listening at http://localhost:${PORT}`)
+  console.log(`App listening at http://localhost:${PORT}`)
 );
